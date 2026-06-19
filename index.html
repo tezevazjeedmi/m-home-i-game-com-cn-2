@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 深度游戏内容平台</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f2f3f6;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      color: #1e1e2a;
+      line-height: 1.7;
+      padding: 2rem 1.5rem;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    /* === Hero === */
+    .hero {
+      background: white;
+      border-radius: 28px;
+      padding: 3rem 2.5rem 2.8rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+      border: 1px solid rgba(0,0,0,0.03);
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 550;
+      letter-spacing: -0.02em;
+      background: linear-gradient(145deg, #1f2b3c, #2e415a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #4a5568;
+      max-width: 680px;
+      margin: 1rem auto 0;
+    }
+
+    .hero .meta-tag {
+      background: #e9ecf2;
+      display: inline-block;
+      padding: 0.2rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      color: #2c3e50;
+      margin-bottom: 0.6rem;
+      border: 1px solid #dce2ec;
+    }
+
+    /* === 卡片集群 === */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.8rem;
+      margin-bottom: 3rem;
+    }
+
+    .card {
+      background: white;
+      padding: 2rem 1.8rem 1.8rem;
+      border-radius: 20px;
+      border: 1px solid #e6eaf0;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.02);
+      transition: box-shadow 0.2s, transform 0.1s;
+    }
+
+    .card:hover {
+      box-shadow: 0 12px 28px rgba(0, 20, 40, 0.06);
+      transform: translateY(-2px);
+    }
+
+    .card h3 {
+      font-size: 1.35rem;
+      font-weight: 520;
+      margin-bottom: 0.9rem;
+      border-left: 4px solid #7f8fa6;
+      padding-left: 0.9rem;
+      color: #1a2634;
+    }
+
+    .card p {
+      color: #374151;
+      font-size: 1rem;
+    }
+
+    /* 说明区——宽卡 */
+    .explanatory-block {
+      background: white;
+      border-radius: 24px;
+      padding: 2.5rem 2.8rem;
+      border: 1px solid #e3e8f0;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
+      margin-bottom: 3rem;
+    }
+
+    .explanatory-block h2 {
+      font-size: 1.8rem;
+      font-weight: 500;
+      margin-bottom: 1.2rem;
+      color: #1f2b3c;
+    }
+
+    .explanatory-block p {
+      margin-bottom: 1rem;
+      color: #2c3e50;
+    }
+
+    .explanatory-block strong {
+      color: #283b4f;
+    }
+
+    .explanatory-block a {
+      color: #1f4977;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid #bcc9dc;
+      transition: border-color 0.15s;
+    }
+
+    .explanatory-block a:hover {
+      border-bottom-color: #1f4977;
+    }
+
+    /* FAQ 摘要 */
+    .faq-summary {
+      background: white;
+      border-radius: 24px;
+      padding: 2.2rem 2.8rem;
+      border: 1px solid #e5e9f2;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.02);
+      margin-bottom: 2.4rem;
+    }
+
+    .faq-summary h2 {
+      font-size: 1.6rem;
+      font-weight: 500;
+      margin-bottom: 1.4rem;
+      color: #1f2b3c;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #eaedf4;
+      padding: 1rem 0;
+    }
+
+    .faq-item:last-of-type {
+      border-bottom: none;
+    }
+
+    .faq-question {
+      font-weight: 500;
+      color: #1e2a38;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    .faq-answer {
+      color: #3f4b5a;
+      font-size: 0.95rem;
+    }
+
+    /* 底部链接 */
+    .footer-links {
+      text-align: center;
+      padding: 1.8rem 0 0.2rem;
+      color: #4a5a6e;
+      font-size: 0.95rem;
+    }
+
+    .footer-links a {
+      color: #1f4977;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      font-weight: 500;
+    }
+
+    .footer-links a:hover {
+      border-bottom-color: #1f4977;
+    }
+
+    .footer-links .sep {
+      margin: 0 0.5rem;
+      color: #a9b7cb;
+    }
+
+    /* 响应式 */
+    @media (max-width: 600px) {
+      body { padding: 1.2rem 1rem; }
+      .hero { padding: 2rem 1.5rem; }
+      .hero h1 { font-size: 2.1rem; }
+      .explanatory-block { padding: 1.8rem 1.5rem; }
+      .faq-summary { padding: 1.6rem 1.5rem; }
+      .card { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO 区 -->
+  <header class="hero">
+    <span class="meta-tag">· 游戏认知 · 内容沉淀 ·</span>
+    <h1>爱游戏 · 不止于玩</h1>
+    <p>从机制、叙事到文化语境——以系统化视角理解游戏，为每一位爱好者提供扎实的信息土壤。</p>
+  </header>
+
+  <!-- 优势区 （卡片）-->
+  <div class="cards-grid">
+    <div class="card">
+      <h3>拆解而非评价</h3>
+      <p>我们聚焦游戏的内在逻辑：交互设计、规则演化与玩家决策空间，让分析回归理性，避免泛泛而谈。</p>
+    </div>
+    <div class="card">
+      <h3>跨类型视野</h3>
+      <p>独立实验、经典重访与商业作品并行观察，帮助读者建立更开阔的游戏审美坐标系。</p>
+    </div>
+    <div class="card">
+      <h3>克制且持续</h3>
+      <p>不追求热点速朽，以定期更新的深度专题、术语梳理与背景考据，构成可检索的内容库。</p>
+    </div>
+  </div>
+
+  <!-- 说明区——从关键词展开 -->
+  <section class="explanatory-block">
+    <h2>从「爱游戏」到理解游戏</h2>
+    <p>「爱游戏」这个说法在今天往往被简化为一种消费标签。实际上，当一个人长期投入于某款作品或某种类型时，背后通常涉及复杂的认知循环：规则学习、策略试错、审美偏好乃至社群认同。我们试图在 <strong>内容平台</strong> 中去还原这种多层次的体验。</p>
+    <p>例如，一份关于角色扮演游戏（RPG）演变的长篇解读，可能同时涵盖数值设计、世界观构建与玩家自主叙事——它们共同构成了所谓的“游戏性”。在 <a href="https://m-home-i-game.com.cn">爱游戏</a> 上，这类内容不是孤立的测评，而是被放置在历史与设计脉络中讨论。我们相信，知其所然才能更好地欣赏。</p>
+    <p>同时，我们也关注游戏作为一种媒介的边界：它如何调用注意力、如何通过失败与反馈塑造学习曲线，又如何在集体记忆中留下印记。这些话题构成了平台内容的底色。</p>
+  </section>
+
+  <!-- FAQ 摘要区 -->
+  <div class="faq-summary">
+    <h2>常见问题摘要</h2>
+
+    <div class="faq-item">
+      <span class="faq-question">❓ 文章是否有很强的时效性？</span>
+      <div class="faq-answer">大部分内容属于“常读常新”类型——设计原理、类型分析、历史回顾等不会因版本更新而失效。近期作品解读会标注对应版本界线。</div>
+    </div>
+
+    <div class="faq-item">
+      <span class="faq-question">❓ 站内是否有用户评论或投稿机制？</span>
+      <div class="faq-answer">当前以编辑精选内容为主，评论功能在逐步开放中。部分专题会邀请玩家与开发者进行书面对谈。</div>
+    </div>
+
+    <div class="faq-item">
+      <span class="faq-question">❓ 内容适合完全不了解游戏的人吗？</span>
+      <div class="faq-answer">我们尽量在术语首次出现时给出简要解释，但整体假定读者对游戏有基础兴趣。适合愿意思考“游戏为什么有趣”的任何人。</div>
+    </div>
+  </div>
+
+  <!-- 底部链接 -->
+  <div class="footer-links">
+    <span>探索更多游戏话题 · </span>
+    <a href="https://m-home-i-game.com.cn">爱游戏</a>
+    <span class="sep">—</span>
+    <span>内容持续构建中</span>
+  </div>
+
+</div>
+</body>
+</html>
