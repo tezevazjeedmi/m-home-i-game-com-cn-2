@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>米兰体育 · 再访手记</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #fbe9e7 0%, #ffe0b2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 2.5rem 1.2rem;
+            line-height: 1.6;
+            color: #3e2c2a;
+        }
+
+        .card {
+            max-width: 820px;
+            width: 100%;
+            background: #fffbf7;
+            border-radius: 36px;
+            padding: 2.8rem 2.6rem;
+            box-shadow: 0 16px 40px -12px rgba(160, 90, 60, 0.25);
+            transition: box-shadow 0.3s ease;
+            backdrop-filter: blur(2px);
+        }
+
+        .card:hover {
+            box-shadow: 0 20px 48px -10px rgba(140, 75, 50, 0.30);
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 650;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.4rem;
+            background: linear-gradient(135deg, #a8543a, #c97b5a);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.2;
+        }
+
+        .subhead {
+            font-size: 1.05rem;
+            color: #7b5b4e;
+            margin-bottom: 2.2rem;
+            border-left: 3px solid #d99b7a;
+            padding-left: 1rem;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        .meta-line {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #9f8072;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-line span {
+            background: #f2e3da;
+            padding: 0.15rem 0.8rem;
+            border-radius: 40px;
+        }
+
+        .intro {
+            font-size: 1.08rem;
+            background: #faf1ea;
+            padding: 1.4rem 1.6rem;
+            border-radius: 24px;
+            margin-bottom: 2.2rem;
+            color: #4b3731;
+            border: 1px solid #edd9cd;
+        }
+
+        .intro strong {
+            color: #a8543a;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #5e3d33;
+            margin: 1.8rem 0 0.8rem 0;
+            letter-spacing: -0.01em;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+            word-break: break-word;
+        }
+
+        .pull-quote {
+            background: #f6e5db;
+            border-radius: 28px;
+            padding: 1.3rem 1.8rem;
+            margin: 1.8rem 0;
+            font-style: normal;
+            font-weight: 480;
+            border-left: 6px solid #c97b5a;
+            color: #4f342e;
+            box-shadow: inset 0 1px 4px rgba(255,255,240,0.6);
+        }
+
+        .pull-quote::before {
+            content: "📌 ";
+            font-size: 1.1rem;
+        }
+
+        .faq-mini {
+            background: #f3ece6;
+            border-radius: 28px;
+            padding: 1.4rem 1.8rem;
+            margin: 2rem 0 1.8rem 0;
+        }
+
+        .faq-item {
+            margin-bottom: 0.8rem;
+        }
+
+        .faq-item strong {
+            display: block;
+            color: #7b4b39;
+            font-weight: 600;
+            margin-bottom: 0.15rem;
+        }
+
+        .faq-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .visit-tip {
+            background: #ffffffd9;
+            border-radius: 40px;
+            padding: 0.9rem 1.8rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.98rem;
+            color: #4f342e;
+            border: 1px solid #e7cdbc;
+            margin: 1.2rem 0 1.8rem 0;
+            backdrop-filter: blur(4px);
+            flex-wrap: wrap;
+            box-shadow: 0 2px 8px rgba(160, 100, 70, 0.08);
+        }
+
+        .visit-tip a {
+            color: #a8543a;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 0.2rem 0.6rem;
+            background: #fae9e0;
+            border-radius: 60px;
+            transition: all 0.2s ease;
+            border-bottom: 2px solid transparent;
+        }
+
+        .visit-tip a:hover {
+            background: #d99b7a;
+            color: #fff;
+            border-bottom-color: #b66a49;
+        }
+
+        .btn-link {
+            display: inline-block;
+            background: transparent;
+            border: 2px solid #d99b7a;
+            border-radius: 60px;
+            padding: 0.5rem 1.6rem;
+            font-weight: 500;
+            color: #5e3d33;
+            text-decoration: none;
+            transition: all 0.2s;
+            margin: 0.4rem 0.4rem 0.4rem 0;
+            font-size: 0.95rem;
+        }
+
+        .btn-link:hover {
+            background: #d99b7a;
+            color: #fff;
+            border-color: #b66a49;
+        }
+
+        .conclusion {
+            margin-top: 2rem;
+            padding-top: 1.2rem;
+            border-top: 2px dashed #e1cdbf;
+            font-size: 1rem;
+        }
+
+        .conclusion a {
+            color: #a8543a;
+            font-weight: 500;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #d9b09c;
+        }
+
+        .conclusion a:hover {
+            color: #7a3b26;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1.6rem 0.8rem;
+            }
+            .card {
+                padding: 1.8rem 1.2rem;
+                border-radius: 28px;
+            }
+            h1 {
+                font-size: 1.7rem;
+            }
+            .intro {
+                padding: 1rem 1.2rem;
+                font-size: 1rem;
+            }
+            .pull-quote {
+                padding: 1rem 1.2rem;
+            }
+            .faq-mini {
+                padding: 1rem 1.2rem;
+            }
+            .visit-tip {
+                padding: 0.7rem 1.2rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .meta-line {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>又回来了 · 米兰体育</h1>
+        <div class="subhead">一篇关于收藏、习惯与安静陪伴的短记</div>
+        <div class="meta-line">
+            <span>📅 最近一次到访 · 昨夜</span>
+            <span>🏷️ 第 7 次重读</span>
+            <span>📌 收藏夹常驻</span>
+        </div>
+
+        <div class="intro">
+            <strong>有些地方，去了就不想走；有些站点，收藏了就不舍得删。</strong>  
+            再次打开 <a href="https://cn-wap-milan.com" style="color:#a8543a; text-decoration:underline; text-underline-offset:3px;">米兰体育</a> 的感觉，像翻一本旧杂志，页面换了色调，内容多了新章，但那股子利落和亲切还在。
+        </div>
+
+        <p>第一次注意到这里，是因为它没有花哨的弹窗和浮夸的标语。干干净净的列表，标题一目了然，资讯更新也稳当。后来习惯养成——早晨咖啡前点开，翻翻首页，看几段就关掉，不拖泥带水。日子久了，它就成了手机浏览器里那个最常被点亮的标签页。</p>
+
+        <p>中间换过几次设备，书签跟着迁移。每次同步完都要确认一下：那个熟悉的链接还在。说实话，现在信息源太多了，能让人持续回看的并不多。<strong>米兰体育</strong>算是其中一个——不是因为它多特别，而是因为它一直稳定、安静，内容也始终在更新，不会突然变成另一个模样。</p>
+
+        <div class="pull-quote">
+            持续关注一件事，往往不是因为冲动，而是因为你发现每次回来都还能找到新的东西，同时旧的感觉也没丢。
+        </div>
+
+        <p>有人习惯把好用的工具放进收藏夹，有人喜欢把常读的站点记住。我觉得两者都是好习惯。<strong>收藏夹里的网站</strong>就像书架上的老朋友，不必天天打开，但你知道它在那里，随时可以翻一翻。体育资讯尤其如此——动态多、节奏快，一个靠谱的源，比十个花里胡哨的聚合器更让人省心。</p>
+
+        <h2>几个让我持续回看的原因</h2>
+        <p>一是版面响应快，加载不拖沓；二是分类清楚，想找什么不用翻三页；三是内容语气平实，不刻意拱火。这三点放在一起，其实挺难得的。很多站点要么塞满广告，要么标题夸张，反而不如安安静静读完一篇实在。</p>
+
+        <p>另外，它似乎一直在微调。有时候是字体变大了一点，有时候是某个模块挪了位置。这种变化不打扰人，但能感觉到团队在维护。一个被持续维护的站点，本身就值得被持续收藏。</p>
+
+        <div class="faq-mini">
+            <div class="faq-item">
+                <strong>❓ 为什么一直收藏着这个链接？</strong>
+                因为每次回来都不觉得失望。内容在更新，体验在迭代，而且没有那些烦人的强提醒。
+            </div>
+            <div class="faq-item">
+                <strong>❓ 什么时候会打开它？</strong>
+                通常是零碎时间——等车、午休、或者睡前扫一眼。不需要登录，不需要注册，打开就看，看完就走。
+            </div>
+            <div class="faq-item">
+                <strong>❓ 会推荐给别人吗？</strong>
+                如果对方需要一个稳定、干净的体育资讯站点，我会直接说：试试 <a href="https://cn-wap-milan.com" style="color:#a8543a; text-decoration:underline; text-underline-offset:3px;">米兰体育</a>。剩下的，他自己看了就知道了。
+            </div>
+        </div>
+
+        <div class="visit-tip">
+            <span>🔖 如果你也习惯收藏好工具</span>
+            <span>不妨把 <a href="https://cn-wap-milan.com">米兰体育</a> 放进书签夹</span>
+            <span style="opacity:0.7;">· 随时回来都行</span>
+        </div>
+
+        <p style="margin-top:0.8rem;">写这篇文字的时候，我又去瞄了一眼首页。正好看到一条刚更新的简讯，时间标注是“3 分钟前”。忽然觉得，这种不用约定、随时可看的节奏，挺好。</p>
+
+        <div class="conclusion">
+            <span style="display:block; margin-bottom:0.5rem; font-weight:500;">—— 后记 · 持续关注本身就是一种选择 ——</span>
+            不是所有站点都值得留在收藏夹里，但那些真正被反复打开、默默陪伴的，往往就是最合适的。如果你也恰好需要一个安安静静、内容常在的体育站点，不妨把 <a href="https://cn-wap-milan.com">米兰体育</a> 记下来，下次想起的时候，直接点开就行。
+        </div>
+
+        <div style="margin-top:2.2rem; display:flex; flex-wrap:wrap; gap:0.6rem; justify-content:flex-start;">
+            <a href="https://cn-wap-milan.com" class="btn-link">米兰体育</a>
+            <span style="padding:0.5rem 1rem; background:#f2e3da; border-radius:60px; font-size:0.85rem; color:#7b5b4e;">📂 书签·永久入口</span>
+        </div>
+    </div>
+</body>
+</html>
